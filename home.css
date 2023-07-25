@@ -1,0 +1,151 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    display: flex;
+    background-color: white;
+    height: auto;
+    flex-direction: column;
+    /* overflow-y: scroll; */
+}
+
+/* Header */
+.header{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    background-color: black;
+    /* position: sticky;
+    top: 0; */
+    
+}
+
+.head-left{
+    display: flex;
+    flex: 0.4;
+    flex-direction: row;
+}
+.head-right{
+    display: flex;
+    flex: 0.6;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.wiki{
+    width: 180px;
+    height: 40px;
+    align-self: center;
+    margin-right: 40px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    background-color: black;
+    border: 2px white solid;
+}
+.about{
+    width: 180px;
+    height: 40px;
+    align-self: center;
+    margin-right: 40px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    background-color: black;
+    border: 2px white solid;
+}
+.credit{
+    width: 180px;
+    height: 40px;
+    align-self: center;
+    margin-right: 40px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    background-color: black;
+    border: 2px white solid;
+}
+
+.wiki:hover{
+    border: 2px gold solid;
+}
+.about:hover{
+    border: 2px gold solid;
+}
+.credit:hover{
+    border: 2px gold solid;
+}
+
+/* Main body */
+
+.body{
+    display: flex;
+    flex-direction: row;
+    height: 445px;
+}
+.body-left{
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+}
+.body-right{
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+}
+.headline{
+    font-size: 80px;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 60px;
+    /* color: gold; */
+}
+.sub{
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    margin-left: 30px;
+    color: gold;
+}
+
+.wiki2{
+    width: 180px;
+    height: 40px;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    border: 2px black solid;
+    background-color: white;
+    margin-top: 20px;
+}
+.wiki2:hover{
+    border: 2px gold solid;
+
+}
+
+/* Footer */
+.footer{
+    height: 90px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+}
+.foot-left{
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.foot-right{
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.copy{
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
