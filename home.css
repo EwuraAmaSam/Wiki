@@ -1,3 +1,5 @@
+/* <a href="https://www.freepik.com/free-photo/black-men-cafe-have-business_7710324.htm#query=black%20people&position=4&from_view=search&track=ais">Image by prostooleh</a> on Freepik */
+
 *{
     padding: 0px;
     margin: 0px;
@@ -124,6 +126,25 @@ body{
 
 }
 
+.body-left{
+    display: flex;
+    flex-direction: column;
+    /* justify-items: center; */
+    align-items: center;
+    padding: 15px;
+}
+
+.image{
+    /* background-color: black; */
+    height: 400px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px black;
+    background-image: url("./black-men.jpg");
+    background-size: cover;
+    
+}
+
 /* Footer */
 .footer{
     height: 90px;
@@ -149,3 +170,73 @@ body{
     color: white;
     font-family: 'Lato', sans-serif;
 }
+
+
+/* Media query for screens with a maximum width of 768px (small devices) */
+@media screen and (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      height: auto;
+      align-items: center;
+    }
+  
+    .head-left,
+    .head-right {
+      justify-content: center;
+      margin: 10px 0;
+    }
+  
+    .body {
+      flex-direction: column;
+      height: 700px;
+    }
+  
+    .headline {
+      font-size: 60px;
+      margin-left: 20px;
+    }
+  
+    .sub {
+      font-size: 16px;
+    }
+  
+    .body-left,
+    .body-right {
+      flex: 1;
+    }
+  
+    .image {
+      height: 400px;
+      width: 100%;
+      margin-top: 30px;
+    }
+    .footer{
+        height: 120px;
+    }
+
+    .wiki2{
+        margin-left: 30px;
+    }
+  }
+  
+  /* Maximum width of 480px (extra small devices) */
+  @media screen and (max-width: 480px) {
+    .headline {
+      font-size: 40px;
+    }
+  
+    .sub {
+      font-size: 12px;
+      margin: 10px;
+    }
+  
+    .wiki,
+    .about,
+    .credit,
+    .wiki2 {
+      width: 100px;
+      font-size: 14px;
+      margin-right: 5px;
+    }
+  }
+  
