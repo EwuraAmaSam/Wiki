@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+
     <title>Twi-Wiki</title>
 </head>
 <body>
@@ -20,8 +22,10 @@
             <a href="./wiki.html">
                 <button class="wiki" >Go to Wiki</button>
             </a>
-            <button class="about">About</button>
-            <button class="credit">Credits</button>
+            <!-- <button class="about">About</button> -->
+            <a href="./credits.html">
+                <button class="credit">Credits</button>
+            </a>
         </div>
 
     </div>
@@ -39,9 +43,12 @@
         </div>
         <div class="body-right">
             <!-- <p class="headline">Have fun!</p> -->
-            <p class="headline">Read articles in TWI.</p>
+            <p class="headline">Read summarised articles.</p>
             <!-- <p class="sub">FAST and CONVENIENT</p> -->
-            <button class="wiki2"> Go to Wiki</button>
+            <a href="./wiki.html">
+
+                <button class="wiki2"> Go to Wiki</button>
+            </a>
         </div>
         
     </div>
