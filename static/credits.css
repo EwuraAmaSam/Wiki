@@ -1,0 +1,23 @@
+body{
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.container{
+    height: 80px;
+    width: 80%;
+    display: flex;
+    border: 1.4px black solid;
+    margin-top: 50px;
+    margin-left: 50px;
+    justify-content: center;
+    
+}
+.container:hover{
+    
+    border: 1.4px gold solid;
+}
+
+p{
+    font-size: 30px;
+}

@@ -1,7 +1,16 @@
 from flask import Flask, render_template, url_for
-
+from bs4 import BeautifulSoup
+import requests
+import wikipediaapi
+import random
 
 app = Flask(__name__)
+
+wiki_wiki = wikipediaapi.Wikipedia(
+    language='en',
+    extract_format=wikipediaapi.ExtractFormat.WIKI,
+    user_agent="Wiki/1.0 (ewuraamasam@example.com)"
+)
 
 @app.route('/')
 def index():
@@ -9,10 +18,40 @@ def index():
 
 @app.route('/wiki.html')
 def wiki():
-    return render_template('wiki.html')
+    return render_template('wiki.html', article_title="", article_content="")
+
+@app.route('/wiki', methods=['POST'])
+def generate_article():
+    url = 'https://en.wikipedia.org/wiki/Special:Random'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    article_title = soup.find('h1', {'class': 'firstHeading'}).text
+
+    article_content_element = soup.find('div', {'id': 'mw-content-text'})
+    
+    if article_content_element:
+        article_content = ""
+        for paragraph in article_content_element.find_all('p'):
+            article_content += paragraph.text + '\n'
+    else:
+        article_content = "Article content not found."
+
+    
+    # random_title = random.choice(list(wiki_wiki.page.keys()))
+    # random_article = wiki_wiki.page(random_title)
+
+    # if random_article.exists():
+    #     article_title = random_article.title
+    #     article_content = random_article.text
+    # else:
+    #     article_title = "Article title not found."
+    #     article_content = "Article content not found."
+    
+    return render_template('wiki.html', article_title=article_title, article_content=article_content)
 
 @app.route('/credits.html')
 def credits():
+
     return render_template('credits.html')
 
 if __name__ == "__main__":

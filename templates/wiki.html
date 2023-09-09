@@ -12,34 +12,27 @@
 </head>
 <body>
     <div class="body-right">
-        <div class="section"></div>
+        <div class="section">
+            <div class="summary"></div>
+            <div class="actions">
+                <form method="POST" action="/wiki">
+                    <button class="submit" type="submit">Generate an Article</button>
+                </form>
+                <form>
+                    <button class="submit" type="submit">Translate an article</button>
+                </form>
+
+                
+            </div>
+        </div>
     </div>
 
     <div class="body-left">
         <div class="content">
-            <p class="title">Article Title</p>
-            <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Veniam sunt corporis nihil, molestiae temporibus harum ut ipsum, 
-                 laudantium facere sint voluptates quasi totam dolor magnam, reiciendis 
-                 ratione quidem placeat officiis maxime incidunt recusandae vel! Quas 
-                 laudantium eos dignissimos accusantium excepturi. Officia dignissimos 
-                 atque ad, totam impedit voluptate eaque facere maxime. Rerum enim molestias 
-                 expedita similique vel corporis placeat maxime facere perspiciatis quisquam 
-                 laudantium ipsum dignissimos tempora voluptatem blanditiis ad vero eaque
-                deserunt laborum possimus, id dolore! Quia fuga nam magnam quae obcaecati,
-                cum iusto. Numquam quae voluptatem possimus esse excepturi maxime officia 
-                sapiente necessitatibus in adipisci. Veritatis harum tempore dicta labore 
-                sit delectus aliquid provident ex rerum totam nesciunt minima itaque possimus,
-                laboriosam aut consequatur aspernatur eum nobis incidunt odit ea! Excepturi 
-                fugit laborum eum eius ab deserunt libero quae aperiam sapiente dolor temporibus
-                alias, a distinctio, optio velit natus, sint praesentium commodi beatae id 
-                veniam? Facere laudantium vel recusandae, repellendus dolore optio nemo fuga 
-                maiores, accusantium, quasi aliquam iste provident cumque qui animi id sequi? 
-                Maxime repellendus dolores officiis, maiores qui aut ea reprehenderit optio ut 
-                tenetur culpa, ipsam debitis similique distinctio ad. Soluta porro vero sint, 
-                impedit veritatis doloribus quo, aperiam eum exercitationem consectetur at quod 
-                temporibus optio odit consequatur quidem!</p>
-        </div>
+            <p class="title">{{ article_title }}</p>
+            
+            <div class="article-content">{{ article_content|safe }}</div>
+            </div>
     </div>
     
 </body>

@@ -24,6 +24,7 @@ body{
     border-radius: 40px;
     border: 1px black solid;
     box-shadow: 1px 1px 4px 0px;
+    flex-direction: column;
 }
 .content{
     display: flex;
@@ -39,5 +40,20 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     color: black;
-
+}
+.summary{
+    display: flex;
+    flex-direction: column;
+    flex: 0.8;
+}
+.actions{
+    display: flex;
+    flex-direction: row;
+    flex: 0.2;
+    width: 100%;
+}
+.submit{
+    width: 200px;
+    height: 40px;
+    margin-top: 32px;
 }
