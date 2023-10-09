@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 import requests
 import wikipediaapi
 import random
+from transformers import MarianTokenizer, MarianMTModel
+model_name = "Helsinki-NLP/opus-mt-en-fr"
+tokenizer = MarianTokenizer.from_pretrained(model_name)
+model = MarianMTModel.from_pretrained(model_name)
 
 app = Flask(__name__)
 
@@ -28,6 +32,7 @@ def generate_article():
     article_title = soup.find('h1', {'class': 'firstHeading'}).text
 
     article_content_element = soup.find('div', {'id': 'mw-content-text'})
+
     
     if article_content_element:
         article_content = ""
@@ -35,19 +40,11 @@ def generate_article():
             article_content += paragraph.text + '\n'
     else:
         article_content = "Article content not found."
+    inputs = tokenizer.encode(">>en<<" + article_content, return_tensors="pt", padding=True, truncation=True)
+    translated = model.generate(inputs, max_length=500)
+    translated_text = tokenizer.decode(translated[0], skip_special_tokens=True)
+    return render_template('wiki.html', article_title=article_title, article_content=article_content, translated_text = translated_text)
 
-    
-    # random_title = random.choice(list(wiki_wiki.page.keys()))
-    # random_article = wiki_wiki.page(random_title)
-
-    # if random_article.exists():
-    #     article_title = random_article.title
-    #     article_content = random_article.text
-    # else:
-    #     article_title = "Article title not found."
-    #     article_content = "Article content not found."
-    
-    return render_template('wiki.html', article_title=article_title, article_content=article_content)
 
 @app.route('/credits.html')
 def credits():
